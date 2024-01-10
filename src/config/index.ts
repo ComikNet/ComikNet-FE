@@ -1,10 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /*
- * @LastEditors: isboyjc
  * @Description: 全局config配置文件
  * @Date: 2022-09-17 14:35:02
  * @LastEditTime: 2022-11-13 22:23:16
- * @Author: isboyjc
  */
 
 // 获取环境变量
@@ -23,12 +21,12 @@ const configSource = {
   projectDesc: ENV.VITE_APP_DESCRIPTION,
   // 资源base地址
   base: ENV.VITE_BASE,
-  // 接口代理URL路径
-  baseUrl: ENV.VITE_BASE_URL,
-  // 模拟数据接口路径
+  // 接口代理URL路径(e.g. /api)
+  baseUrl: ENV.VITE_SERVER_PREFIX_API,
+  // 模拟数据接口(e.g. /mock-api)
   mockBaseUrl: ENV.VITE_BASE_MOCK_URL,
-  // 服务端接口路径
-  serverUrl: ENV.VITE_BASE_SERVER_URL,
+  // 服务端路径(host:port)
+  serverUrl: ENV.VITE_SERVER_API_URL,
   // GitHub地址
   github: '',
   // 备案号

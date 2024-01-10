@@ -1,16 +1,27 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import InputText from 'primevue/inputtext';
+import http from '@/utils/service';
 
 defineProps<{ msg: string }>();
 
+const msg1 = ref('1234');
+
 const count = ref(0);
+
+const req = () => {
+  http.get('/test', { wwww: 'sdda' }).then((response) => {
+    console.log(response.data);
+  });
+};
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
 
   <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
+    <button type="button" @click="req">count is {{ count }}</button>
+    <InputText v-model="msg1" />
     <p>
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
