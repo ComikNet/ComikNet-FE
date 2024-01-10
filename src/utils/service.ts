@@ -1,9 +1,13 @@
+/*
+ * @Author: nongchatea
+ * @Date: 2024-01-10 10:59:47
+ * @LastEditors: nongchatea
+ * @LastEditTime: 2024-01-10 17:30:58
+ * @Description: ~
+ */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // http.ts
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { ElLoading, ElMessage } from 'element-plus';
-
-let loadingObj: ReturnType<typeof ElLoading.service>;
 
 // 获取环境变量
 const ENV = import.meta.env;
@@ -34,11 +38,6 @@ class Http {
     this.instance.interceptors.request.use(
       (config) => {
         // 可在请求发送前进行一些处理，例如添加 token 等
-        loadingObj = ElLoading.service({
-          lock: true,
-          text: 'Loading',
-          background: 'rgba(0, 0, 0, 0.7)'
-        });
         return config;
       },
       (error) => {
@@ -49,17 +48,22 @@ class Http {
     // 响应拦截器
     this.instance.interceptors.response.use(
       (response) => {
-        loadingObj.close();
+        // toast.add({
+        //   severity: 'success',
+        //   summary: 'Success Message',
+        //   detail: 'Message Content',
+        //   life: 3000
+        // });
         // 可在接收到响应后进行一些处理，例如处理错误信息等
         return response;
       },
       (error) => {
-        loadingObj.close();
-        ElMessage({
-          message: '服务器错误',
-          type: 'error',
-          duration: 2000
-        });
+        // toast.add({
+        //   severity: 'error',
+        //   summary: 'Error Message',
+        //   detail: 'Message Content',
+        //   life: 3000
+        // });
         return Promise.reject(error);
       }
     );

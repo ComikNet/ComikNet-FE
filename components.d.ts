@@ -1,3 +1,10 @@
+/*
+ * @Author: nongchatea
+ * @Date: 2024-01-10 10:47:24
+ * @LastEditors: nongchatea
+ * @LastEditTime: 2024-01-10 15:29:40
+ * @Description: ~
+ */
 /* eslint-disable */
 /* prettier-ignore */
 // @ts-nocheck
@@ -7,8 +14,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
+    RouterLink: (typeof import('vue-router'))['RouterLink'];
+    RouterView: (typeof import('vue-router'))['RouterView'];
   }
 }

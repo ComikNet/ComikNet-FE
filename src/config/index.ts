@@ -2,7 +2,7 @@
 /*
  * @Description: 全局config配置文件
  * @Date: 2022-09-17 14:35:02
- * @LastEditTime: 2022-11-13 22:23:16
+ * @LastEditTime: 2024-01-10 13:50:04
  */
 
 // 获取环境变量

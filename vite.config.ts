@@ -1,3 +1,10 @@
+/*
+ * @Author: nongchatea
+ * @Date: 2024-01-09 15:31:15
+ * @LastEditors: nongchatea
+ * @LastEditTime: 2024-01-10 15:19:02
+ * @Description: ~
+ */
 import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import path from 'node:path';
@@ -5,8 +12,6 @@ import { viteMockServe } from 'vite-plugin-mock';
 import VueSetupExtend from 'vite-plugin-vue-setup-extend';
 import AutoImport from 'unplugin-auto-import/vite';
 // 自动引入es
-import Components from 'unplugin-vue-components/vite';
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   // 获取环境变量
@@ -36,11 +41,7 @@ export default defineConfig(({ mode }) => {
       VueSetupExtend(),
       AutoImport({
         // dts: 'src/auto-imports.d.ts', // 可以自定义文件生成的位置，默认是根目录下
-        imports: ['vue'],
-        resolvers: [ElementPlusResolver()]
-      }),
-      Components({
-        resolvers: [ElementPlusResolver()]
+        imports: ['vue']
       }),
       viteMockServe({
         mockPath: './src/mock',

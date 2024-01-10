@@ -1,17 +1,45 @@
+<!--
+ * @Author: nongchatea
+ * @Date: 2024-01-09 15:31:15
+ * @LastEditors: nongchatea
+ * @LastEditTime: 2024-01-10 16:34:50
+ * @Description: ~
+-->
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue';
+import { storeToRefs } from 'pinia';
+import { useSettingStore } from '@/pinia/modules/settings';
+import { useI18n } from 'vue-i18n';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const { messages, locale }: any = useI18n();
+const settingStore = useSettingStore();
+// 同步store.setting
+const { lang } = storeToRefs(settingStore);
+const elocale = ref(messages.value[locale.value]);
+
+const changeLocale = () => {
+  locale.value = lang.value;
+  console.log(lang.value);
+  elocale.value = messages.value[locale.value];
+};
+lang.value = 'zh-cn';
+
+// 监听store.lang的变化同步至整个项目
+watch(
+  () => lang.value,
+  () => {
+    changeLocale();
+  },
+  { immediate: true, deep: true }
+);
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div id="cls-app">
+    <router-view />
+
+    <!-- <HelloWorld></HelloWorld> -->
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
