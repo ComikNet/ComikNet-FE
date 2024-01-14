@@ -23,10 +23,8 @@
   "vite.port": 8080,
   "fileheader.cursorMode": {},
   "fileheader.customMade": {
-    "Author": "nongchatea", // 改成你的名字
-    "Date": "", // 文件创建时间
-    "LastEditors": "nongchatea", // 文件最后编辑者
-    "LastEditTime": "", // 文件最后编辑时间
+    "Date": "", // 文件创建时间(默认)
+    "LastEditTime": "", // 文件最后编辑时间(默认)
     "Description": "~"
   },
 

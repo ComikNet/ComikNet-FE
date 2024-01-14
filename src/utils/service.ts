@@ -1,10 +1,3 @@
-/*
- * @Author: nongchatea
- * @Date: 2024-01-10 10:59:47
- * @LastEditors: nongchatea
- * @LastEditTime: 2024-01-10 17:30:58
- * @Description: ~
- */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // http.ts
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';

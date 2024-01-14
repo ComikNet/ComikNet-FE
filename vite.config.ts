@@ -2,7 +2,7 @@
  * @Author: nongchatea
  * @Date: 2024-01-09 15:31:15
  * @LastEditors: nongchatea
- * @LastEditTime: 2024-01-10 15:19:02
+ * @LastEditTime: 2024-01-10 22:02:56
  * @Description: ~
  */
 import { defineConfig, loadEnv } from 'vite';
@@ -17,6 +17,7 @@ export default defineConfig(({ mode }) => {
   // 获取环境变量
   const env = loadEnv(mode, process.cwd());
   return {
+    base: './',
     resolve: {
       alias: {
         '@': path.join(__dirname, 'src')
