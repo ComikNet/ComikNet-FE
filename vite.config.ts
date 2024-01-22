@@ -1,8 +1,8 @@
 /*
  * @Author: nongchatea
  * @Date: 2024-01-09 15:31:15
- * @LastEditors: nongchatea
- * @LastEditTime: 2024-01-10 22:02:56
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2024-01-22 13:37:27
  * @Description: ~
  */
 import { defineConfig, loadEnv } from 'vite';
@@ -24,6 +24,7 @@ export default defineConfig(({ mode }) => {
       }
     },
     server: {
+      hmr: true,
       // vite展示端口
       port: Number(env.VITE_WEB_PORT),
       proxy: {
