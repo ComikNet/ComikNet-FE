@@ -2,7 +2,7 @@
  * @Author: nongchatea
  * @Date: 2024-01-09 15:31:15
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2024-01-22 13:37:27
+ * @LastEditTime: 2024-01-23 19:59:35
  * @Description: ~
  */
 import { defineConfig, loadEnv } from 'vite';
@@ -25,6 +25,7 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       hmr: true,
+      open: true,
       // vite展示端口
       port: Number(env.VITE_WEB_PORT),
       proxy: {
